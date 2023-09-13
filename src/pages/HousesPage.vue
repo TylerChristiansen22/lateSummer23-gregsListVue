@@ -1,4 +1,5 @@
 <template>
+    <HouseForm />
     <div class="container">
         <div v-for="house in houses" :key="house.id" class="col-12">
             <HouseCard :house="house" />
