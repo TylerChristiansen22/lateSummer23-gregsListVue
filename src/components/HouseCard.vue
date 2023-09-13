@@ -1,9 +1,9 @@
 <template>
     <RouterLink :to="{ name: 'House Details', params: { houseId: house.id } }">
-        <div class="card my-2 elevation-2">
+        <div class="card house-card my-2 elevation-2">
             <div class="row">
                 <div class="col-6">
-                    <img class="img-fluid" :src="house.imgUrl" alt="No Img Provided">
+                    <img class="house-image img-fluid" :src="house.imgUrl" alt="No Img Provided">
                 </div>
                 <div class="col-6">
                     <div class="justify-content-center">
@@ -35,4 +35,23 @@ export default {
 </script>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.house-card {
+    height: 40vh;
+    overflow: hidden;
+    transition: all .1s ease;
+    cursor: pointer;
+
+    &:hover {
+        transition: all .2s ease;
+        transform: scale(1.05);
+    }
+}
+
+.house-image {
+    height: 40vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+</style>
